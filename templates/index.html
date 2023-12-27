@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit Scraper</title>
+</head>
+<body>
+    <h1>Jacob's amazing reddit web scrapper</h1>
+
+    <form action="/" method="post">
+        <label for="subreddit">Enter Subreddit:</label>
+        <input type="text" id="subreddit" name="subreddit">
+        <input type="submit" value="Get Posts">
+    </form>
+
+    {% if subreddit_data %}
+    <h2>Posts from {{ subreddit_name }}</h2>
+    <ul>
+        {% for post in subreddit_data %}
+        <li>
+            <strong>Title:</strong> {{ post['Title'] }} <br>
+            <strong>Author:</strong> {{ post['Author'] }} <br>
+            <strong>URL:</strong> <a href="{{ post['URL'] }}">{{ post['URL'] }}</a> <br>
+            <!-- Add more fields if needed -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
