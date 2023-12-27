@@ -48,6 +48,3 @@ def index():
 
     return render_template('index.html', subreddit_data=subreddit_data, subreddit_name=subreddit_name)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
